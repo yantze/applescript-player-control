@@ -12,6 +12,19 @@ else
     end tell
 end if
 
+
+-- http://stackoverflow.com/questions/22107418/open-url-and-activate-google-chrome-via-applescript
+tell application "Google Chrome"
+    if it is running then
+        quit
+    else
+        activate
+        open location "http://github.com/yantze"
+        delay 1
+        activate
+    end if
+end tell
+
 # -- Kill selected Process
 # tell application "System Events"
 # 	set listOfProcesses to (name of every process where background only is false)
